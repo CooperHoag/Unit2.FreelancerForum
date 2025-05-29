@@ -22,15 +22,19 @@ const freelancers = Array.from({ length: NUM_FREELANCERS }, () => generateFreela
     // length: NUM_FREELANCERS is listed as 100 in the constants above
   // () => generateFreelancer() tells Array.from to fill each spot with a new freelancer from the function
   // this has to be above the function (set as the global variable) because the function is only responsible for creating one at a time
+// for(let counter = 1; counter <= 100; counter++) {
+//   console.log(counter);
+// }
 
 // create the function
+// const gnerateFreelancer = () => {} is ES6 version
 function generateFreelancer () {
   // randomly select name and occupation
   const name = NAMES[Math.floor(Math.random() * NAMES.length)];
   const occupation = OCCUPATIONS[Math.floor(Math.random() * OCCUPATIONS.length)];
   // randomly select rate betweeen 20 & 200 - Google AI helped on this one
   // const rate = PRICE_RANGE[Math.floor(Math.random() * PRICE_RANGE.length)]; // my first take
-  const rate = Math.floor(Math.random() * (PRICE_RANGE.max - PRICE_RANGE.min + 1)) + PRICE_RANGE.min;
+  const rate = Math.floor(Math.random() * 181) + 20;
   // we subtract the min from the max so the random number (0-1) multiplies by size of the length
   // we +1 so that the range encludes PRICE_RANGE.max, otherwise it stops at 199.99
   // we add the min to the random number because we don't want the random number to start at 0
