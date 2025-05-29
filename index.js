@@ -44,5 +44,6 @@ console.log(freelancers)
 
 // Write a function that returns the average rate of all freelancers in state.
 function calculateAverageRate(freelancers) {
-  
+  // thinking of using reduce?
+  return freelancers.reduce((sum, rate) => sum + rate, 0) / freelancers.length;
 }
